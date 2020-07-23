@@ -10,7 +10,7 @@ Usage: python3 WinMaster.py
 A python script file to remotely exploit web applications - It can test ssls, sqlinjection, and so much more...
 
 ### CONSOLE DISPLAY
-[![WebMaster](https://github.com/BroadbentT/WEB-MASTER/picture1.png)]
+![Screenshot](picture1.png) 
 
 Found this project useful, or would like to see it amended in some way - make a donation.
 https://paypal.me/TerenceBroadbent
