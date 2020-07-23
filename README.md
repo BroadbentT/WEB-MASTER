@@ -5,7 +5,7 @@ Usage: python3 WinMaster.py
 
 | LANGUAGE  | FILENAME         | MD5 Hash                         | Version |
 |------     |------            | -------                          | ----    |
-| python3   | WebMaster.py     |                                  | Bank    |
+| python3   | WebMaster.py     | bfa2bd24f4b332b27a012aa0e5f22dc2 | Bank    |
 
 ![Screenshot](picture2.png) 
 

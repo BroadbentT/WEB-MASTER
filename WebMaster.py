@@ -290,9 +290,9 @@ def options():
    print('\u2551' + "(1) Re/Set DNSERVER   (11) Re/Set SERVERTIME (21) DNSRecon DNS (31) XCat  4567 (41)               (51)             (61) GenList USER (71)           (81) Telnet 23 " + '\u2551')
    print('\u2551' + "(2) Re/Set REMOTE IP  (12) Re/Set DIRECTORY  (22) DigDeep  DNS (32) WPSCan IP  (42)               (52)             (62) GenList PASS (72)           (82) NetCat 80 " + '\u2551')
    print('\u2551' + "(3) Re/Set LIVE PORTS (13) Ping DNSERVER IP  (23) DNSDump  DNS (33)            (43)               (53)             (63) Editor USER  (73)           (83) SQSH  1433" + '\u2551')
-   print('\u2551' + "(4) Re/Set WEBADDRESS (14) Ping  REMOTE  IP  (24) DavTest  IP  (34)            (44)               (54)             (64) Editor PASS  (74)           (84) MSSQL 1433" + '\u2551')
-   print('\u2551' + "(5) Re/Set USERNAME   (15) Trace REMOTE  IP  (25) SSLyze  443  (35)            (45) Password2HASH (55)             (65) Editor HOST  (75)           (85) MySQL 3306" + '\u2551')
-   print('\u2551' + "(6) Re/Set PASSWORD   (16) Nmap LIVE PORTS   (26) SSLScan 443  (36)            (46)               (56)             (66) Editor DNS   (76) Nikto     (86) RDesk 3389" + '\u2551')
+   print('\u2551' + "(4) Re/Set WEBADDRESS (14) Ping REMOTE IP    (24) DavTest  IP  (34)            (44)               (54)             (64) Editor PASS  (74)           (84) MSSQL 1433" + '\u2551')
+   print('\u2551' + "(5) Re/Set USERNAME   (15) Network Scan IP   (25) SSLyze  443  (35)            (45) Password2HASH (55)             (65) Editor HOST  (75)           (85) MySQL 3306" + '\u2551')
+   print('\u2551' + "(6) Re/Set PASSWORD   (16) Nmap LIVEPORTS IP (26) SSLScan 443  (36)            (46)               (56)             (66) Editor DNS   (76) Nikto     (86) RDesk 3389" + '\u2551')
    print('\u2551' + "(7) Re/Set NTLM HASH  (17) Nmap PortService  (27) TestSSL 443  (37)            (47)               (57)             (67) HYDRA SSH    (77) GoBuster  (87) XRDP  3389" + '\u2551')
    print('\u2551' + "(8) Re/Set DNS NAME   (18) Nmap SubDOMAINS   (28) What WEB IP  (38)            (48)               (58)             (68) HYDRA SMB    (78) FTP 21    (88) WinRM 5985" + '\u2551')
    print('\u2551' + "(9) Re/Set EMPTY      (19) Nmap Server Time  (29) MSF WMAP IP  (39)            (49)               (59) GPP Decrypt (69) HYDRA TomCat (79) SSH 22    (89) Save/Exit " + '\u2551')
@@ -856,7 +856,7 @@ while True:
 # -------------------------------------------------------------------------------------
 
    if selection == '15':
-      command("traceroute " + TIP.rstrip(" "))
+      command("fping -asg " + TIP.rstrip(" ") + "/24")
       prompt()
       
 # ------------------------------------------------------------------------------------- 
@@ -928,7 +928,7 @@ while True:
          CheckParams = 1
 
       if CheckParams != 1:
-         command("nmap -p 80 --script http-vhosts --script-args http-vhosts.domain=" + DOM.rstrip(" ") + " " + TIP.rstrip(" "))
+         command("nmap --script http-vhosts --script-args http-vhosts.domain=" + DOM.rstrip(" ") + " " + TIP.rstrip(" "))
       prompt()
 
 # ------------------------------------------------------------------------------------- 
@@ -1170,7 +1170,10 @@ while True:
 
    if selection =='32':
       if TIP[:5] != "EMPTY":
-         command("wpscan --url " + TIP.rstrip(" ") + " -enumerate u")
+         if WEB[:5] != "EMPTY":
+            command("wpscan --url " + WEB.rstrip(" ") + " --enumerate u")
+         else:
+            command("wpscan --url " + TIP.rstrip(" ") + " --enumerate u")
       else:
          print("[*] Remote IP address has not been specified...")
       prompt()
