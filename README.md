@@ -1,6 +1,8 @@
 # WEB-MASTER
 ## A PYTHON SCRIPT FILE TO REMOTELY ANALYSE AND EXPLOIT WEB APPLICATIONS.
 
+![Screenshot](picture2.png) 
+
 Usage: python3 WinMaster.py
 
 | LANGUAGE  | FILENAME         | MD5 Hash                         | Version |
