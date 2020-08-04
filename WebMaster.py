@@ -973,8 +973,9 @@ while True:
 
    if selection =='21':
       if DNS[:5] != "EMPTY":
-         command("dnsrecon -r 127.0.0.1/24 -n " + DNS.rstrip(" "))
-         command("dnsrecon -r 127.0.1.0/24 -n " + DNS.rstrip(" "))
+         ip1,ip2,ip3,ip4 = DNS.rstrip(" ").split(".",4)
+         command("dnsrecon -r " + ip1 + "." + ip2 + "." + ip3 + "." + "1/24 -n " + DNS.rstrip(" "))
+         command("dnsrecon -r " + ip1 + "." + ip2 + "." + "1.0/24 -n " + DNS.rstrip(" "))
          command("dnsrecon -r " + DNS.rstrip(" ") + "/24 -n " + DNS.rstrip(" "))
       else:
          print("[-] DNS server has not been specified...")
@@ -1119,8 +1120,14 @@ while True:
          command("service postgresql start")
          command("touch meterpreter.rc")
          command("echo 'load wmap' >> meterpreter.rc")
-         command("echo 'wmap_sites -a " + TIP.rstrip(" ") + "' >> meterpreter.rc")
-         command("echo 'wmap_targets -t " + TIP.rstrip(" ") + "' >> meterpreter.rc")
+         if WEB[:5] != "EMPTY":
+            command("echo 'wmap_sites -a " + WEB.rstrip(" ") + "' >> meterpreter.rc")
+         else:
+            command("echo 'wmap_sites -a " + TIP.rstrip(" ") + "' >> meterpreter.rc")
+         if "443" in PORT:
+            command("echo 'wmap_targets -t https://" + TIP.rstrip(" ") + "' >> meterpreter.rc")
+         else:
+            command("echo 'wmap_targets -t http://" + TIP.rstrip(" ") + "' >> meterpreter.rc")
          command("echo 'wmap_run -e' >> meterpreter.rc")
          command("msfconsole -r meterpreter.rc")
          prompt() 
